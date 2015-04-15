@@ -1,0 +1,11 @@
+﻿{"words" : [
+	{"id": 0, "word":"flower", "type":"D", "points":3 },
+	{"id": 1, "word":"sunshine", "type":"D", "points":3},
+	{"id": 2, "word":"revolution", "type":"T", "points":3 },
+	{"id": 3, "word":"apple", "type":"T", "points":3},
+	{"id": 4, "word":"chicken", "type":"P", "points":3 },
+	{"id": 5, "word":"black guy", "type":"P", "points":3},
+	{"id": 6, "word":"tree", "type":"D", "points":4 },
+	{"id": 7, "word":"baseball bat", "type":"D", "points":4},
+	{"id": 8, "word":"batman", "type":"D", "points":3}
+]}

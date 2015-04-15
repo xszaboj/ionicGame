@@ -1,0 +1,33 @@
+<ion-view title="Teams">
+    <ion-content>
+       
+        <button class="button button-clear button-balanced button-icon icon ion-plus-circled icon-right" ng-click="addTeam()" >
+            Add team
+        </button>
+        
+        
+        <form name="teamForm" novalidate="novalidate" >
+            <button type="submit" class="button button-clear button-balanced icon-right ion-arrow-right-b" ng-click="continue(teams, teamForm)" ng-disabled="teamForm.$invalid"  > Continue </button>
+            
+            <ion-list>
+                <ion-item ng-repeat="error in errors" type="item-text-wrap" >
+                    <div class="error-message"> {{error}} </div>
+                </ion-item>
+            </ion-list>
+            
+            <ion-list>
+                <ion-item ng-repeat="team in teams" type="item-text-wrap" >
+          
+                    <div class=" item-input-inset">
+                        <label class="item-input-wrapper">
+                            <input type="text" ng-model="team.nick" value="{{team.nick}}" required ng-maxLength="20" >
+                        </label>
+                        <button class="button button-clear button-assertive button-icon icon ion-ios7-close" ng-click="removeTeam(team.id)"  />
+            
+                    </div>
+
+                </ion-item>
+            </ion-list>
+        </form>
+    </ion-content>
+</ion-view>

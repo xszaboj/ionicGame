@@ -1,0 +1,25 @@
+﻿.full-width {
+    width: 100%;
+}
+
+.margin-top-small {
+    margin-top: 5px;
+}
+
+.margin-bottom-small {
+    margin-bottom: 5px;
+}
+
+input.ng-invalid.ng-dirty {
+    background-color: rgba(255,0,0,0.5);
+}
+.error-message {
+    color: rgba(255,0,0,0.5);
+}
+.wordSelected
+{
+    background-color: #E1F0E8;
+}
+.currentteam {
+    font-weight: bold;
+}

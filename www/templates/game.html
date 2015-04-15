@@ -1,0 +1,74 @@
+﻿<ion-view title="Game">
+    <ion-content>
+        
+        <!--
+            <ion-list>
+                <ion-item ng-repeat="item in allWords">
+                    {{item.word}} , {{item.type}}
+                </ion-item>
+            </ion-list>
+        -->
+        
+        <div style="display: block; height: 15px; padding-top: 5px">
+            <span style="width: 60%; float: left; padding-left: 5%; font-weight: bold;" >
+                Team: {{currentTeam.nick}}
+            </span>
+            <span style="width: 30%; float: right;">
+                Round: {{currentRound}}
+            </span>
+        </div>
+        <div class="card">
+            <div class="item item-divider">
+                Choose a word
+            </div>
+            <div class="item item-text-wrap item-icon-left" my-selected="{{words[0].selected}}" ng-click="selectWord(0)" ng-model="words[0]" >
+                <i class="icon ion-edit"> </i>
+                {{words[0].word}}
+                <span style="float: right;" >
+                    {{words[0].points}}
+                </span>
+            </div>
+            <div class="item item-text-wrap item-icon-left"  my-selected="{{words[1].selected}}" ng-click="selectWord(1)" >
+                <i class="icon ion-edit"> </i>
+                {{words[1].word}}
+                <span style="float: right;" >
+                    {{words[1].points}}
+                </span>
+            </div>
+        </div>
+        
+        <div style="text-align:center;" > {{rangeValue}} sec.</div>
+
+        <div class="range">
+            <i class="icon ion-ios7-stopwatch-outline"></i>
+            <input type="range" name="time" min="0" max="60" value="0" ng-model="rangeValue" readonly disabled="disabled"  >
+            <i class="icon ion-ios7-stopwatch"></i>
+        </div>
+
+
+        <div style="text-align:center;" >
+            <button id="stopwatch" class="button button-dark " ng-click="startTimer()" ng-hide="playing" ng-disabled="buttonsDisabled" > Start stopwatch </button>
+            <button class="button button-dark " ng-click="stop()" ng-show="playing" > Stop stopwatch </button>
+        </div>
+        <div id="openGame" class="list" style="padding-top:10px; display: none; "  >
+            <label class="item item-input item-select"  >
+                <div class="input-label">
+                    points to: 
+                </div>
+                <select>
+                    <option>Team 1</option>
+                    <option selected>Currently playing</option>
+                    <option>Team 3</option>
+                </select>
+            </label>
+        </div>
+        <div style="padding-top:10px;" >
+            <button id="correct" class="button button-balanced" style="float:left; margin-left: 8%; width:40%;" ng-disabled="buttonsDisabled" ng-click="correct()">
+                Correct
+            </button>
+            <button id="wrong" class="button button-assertive" style="float:right; margin-right: 8%; width:40%;" ng-disabled="buttonsDisabled" ng-click="wrong()" >
+                Wrong
+            </button>
+        </div>
+    </ion-content>
+</ion-view>
