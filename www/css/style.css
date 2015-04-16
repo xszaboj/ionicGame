@@ -23,3 +23,50 @@ input.ng-invalid.ng-dirty {
 .currentteam {
     font-weight: bold;
 }
+
+.aktivity-icon {
+    width: 35px;
+    height: 35px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    display: inline-block;
+}
+
+.draw{
+    background-image: url("../img/draw_small.png")
+}
+
+.talk{
+    background-image: url("../img/talk_small.png")
+}
+
+.pantomime{
+    background-image: url("../img/pantomime_small.png")
+}
+
+.card .item-icon-left {
+    padding-left: 15px;
+}
+.aktivity-word {
+    padding-left: 10px;
+}
+.aktivity-progress {
+    padding-left: 15px;
+    padding-right: 15px;
+    background-color: red;
+}
+progress[value] {
+    background-color: white;
+    color: yellow;
+    
+} /* IE10 */
+  progress::-webkit-progress-bar-value {background:yellow}
+progress::-webkit-progress-value { background: yellow; background-image:
+	   -webkit-linear-gradient(top, 
+	                           rgba(255, 255, 255, .25), 
+	                           rgba(0, 0, 0, .25)),
+	   -webkit-linear-gradient(left, green, red);
+
+    border-radius: 2px; 
+    background-size: 35px 20px, 100% 100%, 100% 100%;}
+progress::-moz-progress-bar {background-color:yellow}

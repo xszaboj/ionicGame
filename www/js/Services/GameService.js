@@ -112,13 +112,13 @@
 
     function getIconByType(type) {
         if (type == "D") {
-            return "ion-edit";
+            return "aktivity-icon draw";
         }
         if (type == "T") {
-            return "ion-chatbubble-working";
+            return "aktivity-icon talk";
         }
         if (type == "P") {
-            return "ion-ios-body";
+            return "aktivity-icon pantomime";
         }
         return "";
     }

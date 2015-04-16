@@ -22,15 +22,15 @@
                 Choose a word
             </div>
             <div class="item item-text-wrap item-icon-left" my-selected="{{words[0].selected}}" ng-click="selectWord(0)" ng-model="words[0]" >
-                <i class="icon ion-edit"> </i>
-                {{words[0].word}}
+                <span class="{{icon}}"> </span>
+                <span class="aktivity-word" >{{words[0].word}}</span>
                 <span style="float: right;" >
                     {{words[0].points}}
                 </span>
             </div>
             <div class="item item-text-wrap item-icon-left"  my-selected="{{words[1].selected}}" ng-click="selectWord(1)" >
-                <i class="icon ion-edit"> </i>
-                {{words[1].word}}
+                <span class="{{icon}}"> </span>
+                <span class="aktivity-word" >{{words[1].word}}</span>
                 <span style="float: right;" >
                     {{words[1].points}}
                 </span>
@@ -41,7 +41,7 @@
 
         <div class="range">
             <i class="icon ion-ios7-stopwatch-outline"></i>
-            <input type="range" name="time" min="0" max="60" value="0" ng-model="rangeValue" readonly disabled="disabled"  >
+            <progress value="{{rangeValue}}"  name="time" max="60" ></progress>
             <i class="icon ion-ios7-stopwatch"></i>
         </div>
 
