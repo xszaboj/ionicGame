@@ -2,6 +2,7 @@
 .controller('GameController', ['$scope', '$interval', 'GameService', 'UtilService', 'MediaService', 'WordsService', function ($scope, $interval, GameService, UtilService, MediaService, WordsService) {
     //start,correct,wrong buttons
     $scope.buttonsDisabled = true;
+    $scope.wordsHidden = false;
 
     //currently playing team
     var currentTeam = GameService.GetCurrentTeam();
@@ -19,6 +20,7 @@
     $scope.playing = false;
 
     $scope.icon = GameService.GetType();
+    $scope.wordType = GameService.GetTypeWord();
 
     //stopwatch - start timer function
     $scope.startTimer = function () {
@@ -84,12 +86,24 @@
         defaultState();
         UtilService.RedirectWithoutHistory("results");
     }
+    $scope.hideWords = function() {
+        $scope.wordsHidden = true;
+    }
+    $scope.showWords = function () {
+        $scope.wordsHidden = false;
+    }
+    $scope.showHideWordsButton = function() {
+        return (($scope.buttonsDisabled == false) && ($scope.wordsHidden == false));
+    }
+    $scope.showShowWordsButton = function () {
+        return (($scope.buttonsDisabled == false) && ($scope.wordsHidden == true));
+    }
 
     function defaultState() {
         $scope.stop();
         $scope.rangeValue = 0;
         $scope.buttonsDisabled = true;
-
+        $scope.wordsHidden = false;
     }
 
 }])

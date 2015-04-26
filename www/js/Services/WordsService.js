@@ -1,8 +1,8 @@
 ﻿angular.module('starter.services')
-    .factory('WordsService', function ($http, $q, DSCacheFactory) {
+    .factory('WordsService', function ($http, $q) {
 
         //define the cache variable and choose type of cache defined in app.js (staticCache)
-        self.wordsCache = DSCacheFactory.get("staticCache");
+        //self.wordsCache = DSCacheFactory.get("staticCache");
 
         var unUsedWords = null;
 
@@ -12,26 +12,18 @@
         var minWords = 2;
 
         function getWords() {
-            var deffered = $q.defer(),
-                //key to cached object
-                cacheKey = "words",
-                //cached object
-                wordsData = self.wordsCache.get(cacheKey);
+            var deffered = $q.defer();
 
-            if (wordsData) {
-                //retrieve data from cache
-                console.log("Found data in cache", wordsData);
-                deffered.resolve(wordsData);
-            } else {
+            
                 //load and put data to cache
                 $http.get('Data/words.json').success(function (data) {
                     console.log("received over HTTP");
-                    self.wordsCache.put(cacheKey, data);
+                    //self.wordsCache.put(cacheKey, data);
                     deffered.resolve(data);
                 }).error(function (response, status, headers, config) {
                     deffered.reject(status);
                 });
-            }
+            
             return deffered.promise;
         }
 

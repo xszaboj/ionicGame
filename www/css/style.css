@@ -55,18 +55,41 @@ input.ng-invalid.ng-dirty {
     padding-right: 15px;
     background-color: red;
 }
+
+.card-header {
+    margin-top: 13px;
+    display: block;
+    float: left;
+}
+
+progress {
+    width: 80%;
+}
 progress[value] {
     background-color: white;
-    color: yellow;
+    color: #CC0000;
+
     
 } /* IE10 */
-  progress::-webkit-progress-bar-value {background:yellow}
-progress::-webkit-progress-value { background: yellow; background-image:
+progress::-webkit-progress-bar-value {background:#CC0000;}
+progress::-webkit-progress-value { 
+    background: #CC0000; 
+    background-image:
 	   -webkit-linear-gradient(top, 
 	                           rgba(255, 255, 255, .25), 
 	                           rgba(0, 0, 0, .25)),
-	   -webkit-linear-gradient(left, green, red);
+	   -webkit-linear-gradient(left, green 0%, yellow 60%, red 95%);
 
     border-radius: 2px; 
     background-size: 35px 20px, 100% 100%, 100% 100%;}
-progress::-moz-progress-bar {background-color:yellow}
+progress::-moz-progress-bar {
+    background: #CC0000; 
+    background-image:
+	   -moz-linear-gradient(top, 
+	                           rgba(255, 255, 255, .25), 
+	                           rgba(0, 0, 0, .25)),
+	   -moz-linear-gradient(left, green 0%, yellow 60%, red 95%);
+
+    border-radius: 2px; 
+    background-size: 35px 20px, 100% 100%, 100% 100%;
+}

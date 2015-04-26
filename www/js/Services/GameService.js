@@ -123,6 +123,19 @@
         return "";
     }
 
+    function getWordByType(type) {
+        if (type == "D") {
+            return "Drawing";
+        }
+        if (type == "T") {
+            return "Talking";
+        }
+        if (type == "P") {
+            return "Pantomime";
+        }
+        return "";
+    }
+
     return {
         IsLoaded: function() {
             return loaded;
@@ -229,6 +242,11 @@
         GetType: function() {
             var type = WordsService.GetTypeByPoints(currentTeam.points);
             return getIconByType(type);
+        },
+
+        GetTypeWord: function() {
+            var type = WordsService.GetTypeByPoints(currentTeam.points);
+            return getWordByType(type);
         }
     }
 

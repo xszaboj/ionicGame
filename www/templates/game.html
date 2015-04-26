@@ -1,4 +1,4 @@
-﻿<ion-view title="Game">
+﻿<ion-view title="Game" hide-nav-bar="true">
     <ion-content>
         
         <!--
@@ -9,46 +9,47 @@
             </ion-list>
         -->
         
-        <div style="display: block; height: 15px; padding-top: 5px">
-            <span style="width: 60%; float: left; padding-left: 5%; font-weight: bold;" >
-                Team: {{currentTeam.nick}}
-            </span>
-            <span style="width: 30%; float: right;">
-                Round: {{currentRound}}
-            </span>
+        <div style="display: block; height: 15px; padding-top: 5px; text-align: center; font-weight: bold;">
+            <h3>
+                {{currentTeam.nick}}
+            </h3>
         </div>
         <div class="card">
             <div class="item item-divider">
-                Choose a word
+                <span ng-show="buttonsDisabled">Choose word</span>
+                <span ng-hide="buttonsDisabled" class="card-header"> {{wordType}} </span>
+                <span ng-show="showHideWordsButton()" style="float: right;"> <button class="button button-dark icon-left ion-eye-disabled" ng-click="hideWords()"> Hide words </button> </span>
+                <span ng-show="showShowWordsButton()" style="float: right;" > <button class="button button-dark icon-left ion-eye" ng-click="showWords()"> Show words </button> </span>
             </div>
-            <div class="item item-text-wrap item-icon-left" my-selected="{{words[0].selected}}" ng-click="selectWord(0)" ng-model="words[0]" >
-                <span class="{{icon}}"> </span>
-                <span class="aktivity-word" >{{words[0].word}}</span>
-                <span style="float: right;" >
-                    {{words[0].points}}
-                </span>
-            </div>
-            <div class="item item-text-wrap item-icon-left"  my-selected="{{words[1].selected}}" ng-click="selectWord(1)" >
-                <span class="{{icon}}"> </span>
-                <span class="aktivity-word" >{{words[1].word}}</span>
-                <span style="float: right;" >
-                    {{words[1].points}}
-                </span>
+            <div id="words-card" ng-hide="wordsHidden">
+                <div class="item item-text-wrap item-icon-left" my-selected="{{words[0].selected}}" ng-click="selectWord(0)" ng-model="words[0]" >
+                    <span class="{{icon}}"> </span>
+                    <span class="aktivity-word" >{{words[0].word}}</span>
+                    <span style="float: right;" >
+                        {{words[0].points}}
+                    </span>
+                </div>
+                <div class="item item-text-wrap item-icon-left"  my-selected="{{words[1].selected}}" ng-click="selectWord(1)" >
+                    <span class="{{icon}}"> </span>
+                    <span class="aktivity-word" >{{words[1].word}}</span>
+                    <span style="float: right;" >
+                        {{words[1].points}}
+                    </span>
+                </div>
             </div>
         </div>
         
-        <div style="text-align:center;" > {{rangeValue}} sec.</div>
+        <div style="text-align:center;" > {{rangeValue}} sec. <i class="icon ion-ios7-stopwatch-outline"></i> </div>
 
         <div class="range">
-            <i class="icon ion-ios7-stopwatch-outline"></i>
+            
             <progress value="{{rangeValue}}"  name="time" max="60" ></progress>
-            <i class="icon ion-ios7-stopwatch"></i>
         </div>
 
 
         <div style="text-align:center;" >
-            <button id="stopwatch" class="button button-dark " ng-click="startTimer()" ng-hide="playing" ng-disabled="buttonsDisabled" > Start stopwatch </button>
-            <button class="button button-dark " ng-click="stop()" ng-show="playing" > Stop stopwatch </button>
+            <button id="stopwatch" class="button button-dark icon-left ion-ios7-stopwatch-outline" ng-click="startTimer()" ng-hide="playing" ng-disabled="buttonsDisabled"  > Start stopwatch </button>
+            <button class="button button-dark icon-left ion-ios7-stopwatch-outline" ng-click="stop()" ng-show="playing" > Stop stopwatch </button>
         </div>
         <div id="openGame" class="list" style="padding-top:10px; display: none; "  >
             <label class="item item-input item-select"  >
@@ -63,10 +64,10 @@
             </label>
         </div>
         <div style="padding-top:10px;" >
-            <button id="correct" class="button button-balanced" style="float:left; margin-left: 8%; width:40%;" ng-disabled="buttonsDisabled" ng-click="correct()">
+            <button id="correct" class="button button-balanced icon-left ion-checkmark-circled" style="float:left; margin-left: 8%; width:40%;" ng-disabled="buttonsDisabled" ng-click="correct()">
                 Correct
             </button>
-            <button id="wrong" class="button button-assertive" style="float:right; margin-right: 8%; width:40%;" ng-disabled="buttonsDisabled" ng-click="wrong()" >
+            <button id="wrong" class="button button-assertive icon-left ion-close-circled" style="float:right; margin-right: 8%; width:40%;" ng-disabled="buttonsDisabled" ng-click="wrong()" >
                 Wrong
             </button>
         </div>
