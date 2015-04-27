@@ -24,27 +24,31 @@ angular.module('starter', ['ngCordova','ionic', 'starter.controllers', 'starter.
 })
 
 .config(function($stateProvider, $urlRouterProvider) {
-
     $stateProvider
-      .state('home', {
-          url: "/home",
-          templateUrl: "templates/home.html",
-          controller: 'FirstPageController'
-      })
-      .state('teams', { 
-          url: "/teams",
-          templateUrl: "templates/teams.html",
-          controller: 'TeamsController',
-      })
-     .state('results', { 
-         url: "/results",
-         templateUrl: "templates/results.html",
-        controller: 'ResultsController',
-     })
+    .state('home', {
+        url: "/home",
+        templateUrl: "templates/home.html",
+        controller: 'FirstPageController'
+    })
+    .state('teams', { 
+        url: "/teams",
+        templateUrl: "templates/teams.html",
+        controller: 'TeamsController',
+    })
+    .state('results', { 
+       url: "/results",
+       templateUrl: "templates/results.html",
+      controller: 'ResultsController',
+    })
     .state('game', { 
-        url: "/game",
-        templateUrl: "templates/game.html",
-        controller: 'GameController',
+      url: "/game",
+      templateUrl: "templates/game.html",
+      controller: 'GameController',
+    })
+    .state('options',{ 
+      url: "/options",
+      templateUrl:"templates/options.html",
+      controller:"OptionController",
     });
 
     $urlRouterProvider.otherwise("/home");

@@ -18,8 +18,8 @@
             <div class="item item-divider">
                 <span ng-show="buttonsDisabled">Choose word</span>
                 <span ng-hide="buttonsDisabled" class="card-header"> {{wordType}} </span>
-                <span ng-show="showHideWordsButton()" style="float: right;"> <button class="button button-dark icon-left ion-eye-disabled" ng-click="hideWords()"> Hide words </button> </span>
-                <span ng-show="showShowWordsButton()" style="float: right;" > <button class="button button-dark icon-left ion-eye" ng-click="showWords()"> Show words </button> </span>
+                <span ng-show="showHideWordsButton()" style="float: right;"> <button class="button button_gray icon-left ion-eye-disabled" ng-click="hideWords()"> Hide words </button> </span>
+                <span ng-show="showShowWordsButton()" style="float: right;" > <button class="button button_gray icon-left ion-eye" ng-click="showWords()"> Show words </button> </span>
             </div>
             <div id="words-card" ng-hide="wordsHidden">
                 <div class="item item-text-wrap item-icon-left" my-selected="{{words[0].selected}}" ng-click="selectWord(0)" ng-model="words[0]" >
@@ -46,11 +46,6 @@
             <progress value="{{rangeValue}}"  name="time" max="60" ></progress>
         </div>
 
-
-        <div style="text-align:center;" >
-            <button id="stopwatch" class="button button-dark icon-left ion-ios7-stopwatch-outline" ng-click="startTimer()" ng-hide="playing" ng-disabled="buttonsDisabled"  > Start stopwatch </button>
-            <button class="button button-dark icon-left ion-ios7-stopwatch-outline" ng-click="stop()" ng-show="playing" > Stop stopwatch </button>
-        </div>
         <div id="openGame" class="list" style="padding-top:10px; display: none; "  >
             <label class="item item-input item-select"  >
                 <div class="input-label">
@@ -64,10 +59,10 @@
             </label>
         </div>
         <div style="padding-top:10px;" >
-            <button id="correct" class="button button-balanced icon-left ion-checkmark-circled" style="float:left; margin-left: 8%; width:40%;" ng-disabled="buttonsDisabled" ng-click="correct()">
+            <button id="correct" class="button button_green icon-left ion-checkmark-circled" style="float:left; margin-left: 8%; width:40%;" ng-disabled="buttonsDisabled" ng-click="correct()">
                 Correct
             </button>
-            <button id="wrong" class="button button-assertive icon-left ion-close-circled" style="float:right; margin-right: 8%; width:40%;" ng-disabled="buttonsDisabled" ng-click="wrong()" >
+            <button id="wrong" class="button button_red icon-left ion-close-circled" style="float:right; margin-right: 8%; width:40%;" ng-disabled="buttonsDisabled" ng-click="wrong()" >
                 Wrong
             </button>
         </div>

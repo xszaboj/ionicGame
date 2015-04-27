@@ -53,12 +53,9 @@
         UtilService.StopTimer();
     }
 
-    //You can select only one word
-    $scope.selectWord = function (index) {
-        //enable stopwatch, correct and wrong button
-        $scope.buttonsDisabled = false;
 
-        //choose word
+    var chooseWord = function chooseWord(index)
+    {
         if (index === 0) {
             $scope.words[0].selected = true;
             $scope.words[1].selected = false;
@@ -66,6 +63,20 @@
         if (index === 1) {
             $scope.words[0].selected = false;
             $scope.words[1].selected = true;
+        }
+        else
+        {
+            throw new Exception("there is somethng very wrong");
+        }
+    }
+
+    //You can select only one word
+    $scope.selectWord = function (index) {
+        if($scope.buttonsDisabled){
+            //enable stopwatch, correct and wrong button
+            $scope.buttonsDisabled = false;
+            chooseWord(index);     
+            $scope.startTimer();
         }
     }
 
