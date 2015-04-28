@@ -1,13 +1,13 @@
 <ion-view title="Teams">
     <ion-content>
        
-        <button class="button button-clear button-balanced button-icon icon ion-plus-circled icon-right" ng-click="addTeam()" >
+        <button class="button button_green_light ion-plus-circled icon-right" style="width:100%;" ng-click="addTeam()" >
             Add team
         </button>
         
         
         <form name="teamForm" novalidate="novalidate" >
-            <button type="submit" class="button button-clear button-balanced icon-right ion-arrow-right-b" ng-click="continue(teams, teamForm)" ng-disabled="teamForm.$invalid"  > Continue </button>
+            
             
             <ion-list>
                 <ion-item ng-repeat="error in errors" type="item-text-wrap" >
@@ -28,6 +28,9 @@
 
                 </ion-item>
             </ion-list>
+            <div style="text-align: center; padding-top: 15px">
+                <button type="submit" class="button button_green icon-right ion-arrow-right-b" ng-click="continue(teams, teamForm)" ng-disabled="teamForm.$invalid" style="width: 50%"  > Continue </button>
+            </div>
         </form>
     </ion-content>
 </ion-view>

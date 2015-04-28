@@ -60,7 +60,7 @@
             $scope.words[0].selected = true;
             $scope.words[1].selected = false;
         }
-        if (index === 1) {
+        else if (index === 1) {
             $scope.words[0].selected = false;
             $scope.words[1].selected = true;
         }
