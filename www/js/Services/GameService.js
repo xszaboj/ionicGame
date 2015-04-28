@@ -15,7 +15,7 @@
             initialized: false, //this will say if teams were added and should be readed from localstorage
         },
         teams: [
-            { id: 0, nick: "Team 1", points: 0, order: 0 }
+            { id: 0, nick: "Team 1", points: 0, order: 0, picture:"default" }
         ],
         
     };

@@ -8,6 +8,13 @@
 
     var id = 1;
 
+    function generatePicture()
+    {
+        var pictures = ["default", "frog", "person", "dog"];
+        var rand = Math.floor((Math.random() * 3));
+        return pictures[rand];
+    }
+
     function generateNextId() {
         return id++;
     }
@@ -126,6 +133,7 @@
                 points: 0,
                 order: generateNextOrder(),
                 lastScore:0,
+                picture:"default"
         }
             teams.push(team);
         },
@@ -154,7 +162,9 @@
 
         ClearErrorMessages: function () {
             errorMessages = [];
+        },
+        GetRandomPicture: function(){
+            return generatePicture();
         }
-
     }
 })

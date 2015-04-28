@@ -27,7 +27,7 @@
         }
 
     }
-   
-
-
-    }])
+    $scope.getPicture = function (){
+        return Teams.GetRandomPicture();
+    }
+}])
