@@ -1,16 +1,19 @@
 ﻿<ion-view title="Score">
     <ion-content>
         <div class="row">
-             <div class="col col-50">Nickname</div>
-             <div class="col">Total score</div>
-             <div class="col">Last score</div>
+            <div class="col col-50" style="padding-left:20px;">Nickname</div>
+            <div class="col">Total score</div>
+            <div class="col">Last score</div>
         </div>
         <ion-list>
             <ion-item ng-repeat="team in teamsScore" type="item-text-wrap" >
                 <div  ng-class="{currentteam :team.current, row:true  }">
-                    <div class="col col-50">{{team.nick}}</div>
-                    <div class="col">{{team.score}}</div>
-                    <div class="col">{{team.lastScore}}</div>
+                    <div class="col col-50">
+                        <span class="avatar" style="background-position:{{team.picture}};"></span>
+                        <span class="result-text">{{team.nick}}</span>
+                    </div>
+                    <div class="col result-points">{{team.score}}</div>
+                    <div class="col result-points">{{team.lastScore}}</div>
                 </div>
             </ion-item>
         </ion-list>

@@ -57,7 +57,7 @@ input.ng-invalid.ng-dirty {
 }
 
 .card-header {
-    margin-top: 13px;
+    margin-top: 22px;
     display: block;
     float: left;
 }
@@ -97,6 +97,27 @@ progress::-moz-progress-bar {
     min-height: 45px;
     display: block;
     margin-top: 22px;
+    float: left;
+}
+.header-text
+{
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 20px;
+    display: block;
+    float: left;
+    padding-left: 20px;
+}
+.result-points
+{
+    text-align: right;
+    padding-top: 20px;
+}
+.result-text
+{
+    padding-top: 15px;
+    padding-left: 5px;
+    display: block;
     float: left;
 }
 
@@ -187,4 +208,23 @@ border:1px solid #52b913; -webkit-border-radius: 3px; -moz-border-radius: 3px;bo
  background-image: -ms-linear-gradient(top, #69E81C, #00B800);
  background-image: -o-linear-gradient(top, #69E81C, #00B800);
  background-image: linear-gradient(to bottom, #69E81C, #00B800);filter:progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#69E81C, endColorstr=#00B800);
+}
+
+/*avatar*/
+.avatar
+{
+    background-image: url("../img/sprites/avatars.png");
+    width: 60px;
+    height: 60px;
+    display: block;
+    float:left;
+}
+.avatar-header
+{
+    background-image: url("../img/sprites/avatars.png");
+    width: 60px;
+    height: 60px;
+    display: block;
+    float: right;
+    margin-right: 15px;
 }

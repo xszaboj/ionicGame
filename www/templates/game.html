@@ -9,13 +9,10 @@
             </ion-list>
         -->
         
-        <div style="display: block; height: 15px; padding-top: 5px; text-align: center; font-weight: bold;">
-            <h3>
-                {{currentTeam.nick}}
-            </h3>
-            <span>
-                {{currentTeam.picture}}
-            </span>
+        <div style="display: block; height: 60px; padding-top: 5px;">
+            <span class="header-text" > {{currentTeam.nick}} </span>
+            <span class="avatar-header" style="background-position:{{currentTeam.picture}};"></span>
+            
         </div>
         <div class="card">
             <div class="item item-divider">
@@ -28,14 +25,14 @@
                 <div class="item item-text-wrap item-icon-right" my-selected="{{words[0].selected}}" ng-click="selectWord(0)" ng-model="words[0]" >
                     <span class="{{icon}}"> </span>
                     <span class="aktivity-word" >{{words[0].word}}</span>
-                    <span style="float: right;" >
+                    <span style="float: right;  padding-top:19px;" >
                         {{words[0].points}}
                     </span>
                 </div>
                 <div class="item item-text-wrap item-icon-right"  my-selected="{{words[1].selected}}" ng-click="selectWord(1)" >
                     <span class="{{icon}}"> </span>
                     <span class="aktivity-word" >{{words[1].word}}</span>
-                    <span style="float: right;" >
+                    <span style="float: right; padding-top:19px;" >
                         {{words[1].points}}
                     </span>
                 </div>

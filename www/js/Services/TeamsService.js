@@ -10,9 +10,13 @@
 
     function generatePicture()
     {
-        var pictures = ["default", "frog", "person", "dog"];
-        var rand = Math.floor((Math.random() * 3));
-        return pictures[rand];
+        var maxColumn = 19;
+        var maxRow = 13;
+        var randColumn = Math.floor((Math.random() * maxColumn));
+        var randRow = Math.floor((Math.random() * maxRow));
+        var resultColumn = randColumn * 60;
+        var resultRow = randRow * 60;
+        return (-resultColumn) + "px " + (-resultRow) +"px";
     }
 
     function generateNextId() {
@@ -133,7 +137,7 @@
                 points: 0,
                 order: generateNextOrder(),
                 lastScore:0,
-                picture:"default"
+                picture:"0px 0px"
         }
             teams.push(team);
         },

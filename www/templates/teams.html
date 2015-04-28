@@ -17,7 +17,7 @@
             
             <ion-list>
                 <ion-item ng-repeat="team in teams" type="item-text-wrap" >
-                    <span ng-click="team.picture = getPicture()" >{{team.picture}}</span>
+                    <span ng-click="team.picture = getPicture()" class="avatar" style="background-position:{{team.picture}};"></span>
                     <div class=" item-input-inset">
                         <label class="item-input-wrapper">
                             <input type="text" ng-model="team.nick" value="{{team.nick}}" required ng-maxLength="20" >

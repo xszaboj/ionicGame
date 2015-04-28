@@ -15,9 +15,9 @@
             var teams = Teams.GetAllTeams();
             for (var i = 0; i < teams.length; i++) {
                 var team = teams[i];
-                var score = { nick: team.nick, score: team.points, lastScore: team.lastScore };
+                var score = { nick: team.nick, score: team.points, lastScore: team.lastScore, picture: team.picture };
                 if (team.id === currentTeamId) {
-                    score = { nick: team.nick, score: team.points, lastScore: team.lastScore, current: true };
+                    score = { nick: team.nick, score: team.points, lastScore: team.lastScore, picture: team.picture, current: true };
                 }
                 teamsScore.push(score);
             }
