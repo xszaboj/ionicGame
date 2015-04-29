@@ -16,10 +16,10 @@
         </div>
         <div class="card">
             <div class="item item-divider">
-                <span ng-show="buttonsDisabled" class="choose">Choose word</span>
+                <span ng-show="buttonsDisabled" class="choose">{{translate("game.choose");}}</span>
                 <span ng-hide="buttonsDisabled" class="card-header"> {{wordType}} </span>
-                <span ng-show="showHideWordsButton()" style="float: right;"> <button class="button button_gray icon-right ion-eye-disabled" ng-click="hideWords()"> Hide words </button> </span>
-                <span ng-show="showShowWordsButton()" style="float: right;" > <button class="button button_gray icon-right ion-eye" ng-click="showWords()"> Show words </button> </span>
+                <span ng-show="showHideWordsButton()" style="float: right;"> <button class="button button_gray icon-right ion-eye-disabled" ng-click="hideWords()"> {{translate("game.hide");}} </button> </span>
+                <span ng-show="showShowWordsButton()" style="float: right;" > <button class="button button_gray icon-right ion-eye" ng-click="showWords()"> {{translate("game.show");}} </button> </span>
             </div>
             <div id="words-card" ng-hide="wordsHidden">
                 <div class="item item-text-wrap item-icon-right" my-selected="{{words[0].selected}}" ng-click="selectWord(0)" ng-model="words[0]" >
@@ -39,7 +39,7 @@
             </div>
         </div>
         
-        <div style="text-align:center;" > {{rangeValue}} sec. <i class="icon ion-ios7-stopwatch-outline"></i> </div>
+        <div style="text-align:center;" > {{rangeValue}} {{translate("game.sec");}} <i class="icon ion-ios7-stopwatch-outline"></i> </div>
 
         <div class="range">
             
@@ -60,10 +60,10 @@
         </div>
         <div style="padding-top:10px;" >
             <button id="correct" class="button button_green icon-right ion-checkmark-circled" style="float:left; margin-left: 8%; width:40%;" ng-disabled="buttonsDisabled" ng-click="correct()">
-                Correct
+                {{translate("game.correct");}}
             </button>
             <button id="wrong" class="button button_red icon-right ion-close-circled" style="float:right; margin-right: 8%; width:40%;" ng-disabled="buttonsDisabled" ng-click="wrong()" >
-                Wrong
+                {{translate("game.wrong");}}
             </button>
         </div>
     </ion-content>

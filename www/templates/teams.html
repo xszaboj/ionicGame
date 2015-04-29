@@ -2,7 +2,7 @@
     <ion-content>
        
         <button class="button button_green_light ion-plus-circled icon-right" style="width:100%;" ng-click="addTeam()" >
-            Add team
+            {{translate("team.add");}}
         </button>
         
         
@@ -29,7 +29,7 @@
                 </ion-item>
             </ion-list>
             <div style="text-align: center; padding-top: 15px">
-                <button type="submit" class="button button_green icon-right ion-arrow-right-b" ng-click="continue(teams, teamForm)" ng-disabled="teamForm.$invalid" style="width: 50%"  > Continue </button>
+                <button type="submit" class="button button_green icon-right ion-arrow-right-b" ng-click="continue(teams, teamForm)" ng-disabled="teamForm.$invalid" style="width: 50%"  > {{translate("team.continue");}} </button>
             </div>
         </form>
     </ion-content>

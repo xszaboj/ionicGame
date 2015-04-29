@@ -1,26 +1,27 @@
-﻿<ion-view title="Aktivity">
+﻿<ion-view title="Aktivity" hide-nav-bar="true">
     <ion-content class="padding" >
         
       <div ng-show="supported">
+        <div class="main-logo" ></div>
         <div class="content  ">    
             <a class="button icon-right button_green button-large ion-play full-width margin-top-small margin-bottom-small"
                 href="#/teams" ng-click="start()" >
-                Start new game
+                {{translate("home.start");}}
             </a>
 
             <a class="button icon-right button_yellow  button-large ion-play full-width margin-top-small margin-bottom-small"
                 ng-click="continueTo()" ng-show="initialized" >
-                Continue
+                {{translate("home.continue");}}
             </a>
 
             <a class="button icon-right button_gray ion-gear-b full-width" href="#/options">
-                Options
+                {{translate("home.options");}}
             </a>
         </div>
        </div>
        <div ng-hide="supported" >
-           <h1> We are sorry but your version of browser is not supported :(  </h1>
-           <h2> You need browser that support localStorage.</h2>
+           <h1> {{translate("home.supportedOne");}} :(  </h1>
+           <h2> {{translate("home.supprotedTwo");}}.</h2>
        </div>
     </ion-content>
 </ion-view>

@@ -61,6 +61,15 @@ input.ng-invalid.ng-dirty {
     display: block;
     float: left;
 }
+.main-logo
+{
+    display: block;
+    background-image: url("../img/pantomime.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    min-width: 100%;
+    min-height: 200px;
+}
 
 progress {
     width: 80%;

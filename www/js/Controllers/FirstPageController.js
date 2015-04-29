@@ -14,10 +14,11 @@
     
     $scope.start = function ()
     {
-        //Start new game
+        //Start new game 
         //Set game state to correct values
         GameService.InitNewGame();
     }
+
 
     $scope.supported = GameService.IsLocalStorageAvailable();
 }])
