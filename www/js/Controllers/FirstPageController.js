@@ -1,5 +1,5 @@
 ﻿angular.module('starter.controllers')
-.controller('FirstPageController', ['$scope', 'GameService','UtilService', function ($scope, GameService, UtilService) {
+.controller('FirstPageController', ['$scope', 'GameService', 'UtilService', function ($scope, GameService, UtilService) {
     $scope.initialized = GameService.IsInitialized();
 
     $scope.continueTo = function(){

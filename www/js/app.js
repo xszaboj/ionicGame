@@ -5,7 +5,7 @@
 // the 2nd parameter is an array of 'requires'
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ngCordova','ionic', 'starter.controllers', 'starter.services', 'angular-data.DSCacheFactory' ])
+var app = angular.module('starter', ['ngCordova','ionic', 'starter.controllers', 'starter.services', 'angular-data.DSCacheFactory', 'pascalprecht.translate' ])
 
 .run(function ($ionicPlatform, DSCacheFactory, $rootScope) {
     $ionicPlatform.ready(function () {
@@ -27,7 +27,7 @@ angular.module('starter', ['ngCordova','ionic', 'starter.controllers', 'starter.
     }
 })
 
-.config(function($stateProvider, $urlRouterProvider) {
+.config(function ($stateProvider, $urlRouterProvider) {
     $stateProvider
     .state('home', {
         url: "/home",
@@ -57,5 +57,5 @@ angular.module('starter', ['ngCordova','ionic', 'starter.controllers', 'starter.
 
     $urlRouterProvider.otherwise("/home");
 
-})
 
+})
