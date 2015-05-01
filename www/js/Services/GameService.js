@@ -1,5 +1,5 @@
 ﻿angular.module('starter.services')
-.factory('GameService', function (WordsService) {
+.factory('GameService', function (WordsService, $translate) {
 
     var stateKey = "state";
 
@@ -125,13 +125,13 @@
 
     function getWordByType(type) {
         if (type == "D") {
-            return "Drawing";
+            return $translate.instant("game.drawing");
         }
         if (type == "T") {
-            return "Talking";
+            return $translate.instant("game.describe");
         }
         if (type == "P") {
-            return "Pantomime";
+            return $translate.instant("game.mime");
         }
         return "";
     }

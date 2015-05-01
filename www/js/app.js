@@ -7,7 +7,7 @@
 // 'starter.controllers' is found in controllers.js
 var app = angular.module('starter', ['ngCordova','ionic', 'starter.controllers', 'starter.services', 'angular-data.DSCacheFactory', 'pascalprecht.translate' ])
 
-.run(function ($ionicPlatform, DSCacheFactory, $rootScope) {
+.run(function ($ionicPlatform, DSCacheFactory) {
     $ionicPlatform.ready(function () {
         // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
         // for form inputs)
@@ -21,10 +21,6 @@ var app = angular.module('starter', ['ngCordova','ionic', 'starter.controllers',
 
         DSCacheFactory("staticCache", { storage: "localStorage" });
     });
-
-    $rootScope.translate = function(key){
-      return lang[key];
-    }
 })
 
 .config(function ($stateProvider, $urlRouterProvider) {

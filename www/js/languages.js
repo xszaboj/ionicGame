@@ -1,15 +1,53 @@
 ﻿app.config(function ($translateProvider) {
     $translateProvider.translations('en', {
-        TITLE: 'Hello',
-        FOO: 'This is a paragraph.',
-        BUTTON_LANG_EN: 'english',
-        BUTTON_LANG_DE: 'german'
+        "home.start": "Start new game",
+        "home.continue": "Continue",
+        "home.options": "Options",
+        "home.supportedOne": "We are sorry but you browser is not supported",
+        "home.supprotedTwo": "You need browser that support localstorage",
+        "game.choose": "Choose a word",
+        "game.hide": "Hide words",
+        "game.show": "Show words",
+        "game.sec": "sec.",
+        "game.correct": "Correct",
+        "game.wrong": "Wrong",
+        "game.drawing": "Draw",
+        "game.describe": "Describe",
+        "game.mime": "Pantomime",
+        "results.nickname": "Nickname",
+        "results.total": "Total score",
+        "results.last": "Last score",
+        "results.winner": "Winner is",
+        "results.continue": "Continue",
+        "results.new": "New game",
+        "team.add": "Add team",
+        "team.continue": "Continue",
+        "team.teams": "Teams",
     });
-    $translateProvider.translations('de', {
-        TITLE: 'Hallo',
-        FOO: 'Dies ist ein Paragraph.',
-        BUTTON_LANG_EN: 'englisch',
-        BUTTON_LANG_DE: 'deutsch'
+    $translateProvider.translations('cz', {
+        "home.start": "Nová hra",
+        "home.continue": "Pokračovat",
+        "home.options": "Nastavení",
+        "home.supportedOne": "Je nám líto ale Váš prohlížeč není podporován",
+        "home.supprotedTwo": "Potřebujete prohlížeč, který podporuje localStorage",
+        "game.choose": "Vyber slovo",
+        "game.hide": "Skrýt slova",
+        "game.show": "Zobrazit slova",
+        "game.sec": "sek.",
+        "game.correct": "Správně",
+        "game.wrong": "Špatně",
+        "game.drawing": "Kreslení",
+        "game.describe": "Popis",
+        "game.mime": "Pantomima",
+        "results.nickname": "Přezdívka",
+        "results.total": "Celkové skóre",
+        "results.last": "Poslední skóre",
+        "results.winner": "Vítězem je",
+        "results.continue": "Pokračovat",
+        "results.new": "Nová hra",
+        "team.add": "Přidat tým",
+        "team.continue": "Pokračovat",
+        "team.teams": "Týmy",
     });
-    $translateProvider.preferredLanguage('en');
+    $translateProvider.preferredLanguage('cz');
 });

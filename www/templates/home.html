@@ -6,22 +6,22 @@
         <div class="content  ">    
             <a class="button icon-right button_green button-large ion-play full-width margin-top-small margin-bottom-small"
                 href="#/teams" ng-click="start()" >
-                {{ 'TITLE' | translate }}
+                {{ 'home.start' | translate }}
             </a>
 
             <a class="button icon-right button_yellow  button-large ion-play full-width margin-top-small margin-bottom-small"
                 ng-click="continueTo()" ng-show="initialized" >
-                {{translate("home.continue");}}
+                {{ 'home.continue' | translate }}
             </a>
 
             <a class="button icon-right button_gray ion-gear-b full-width" href="#/options">
-                {{translate("home.options");}}
+                {{ 'home.options' | translate }}
             </a>
         </div>
        </div>
        <div ng-hide="supported" >
-           <h1> {{translate("home.supportedOne");}} :(  </h1>
-           <h2> {{translate("home.supprotedTwo");}}.</h2>
+           <h1> {{ 'home.supportedOne' | translate }} :(  </h1>
+           <h2> {{ 'home.supprotedTwo' | translate }}.</h2>
        </div>
     </ion-content>
 </ion-view>

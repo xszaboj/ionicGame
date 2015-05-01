@@ -2,8 +2,8 @@
     <ion-content>
         <div class="row">
             <div class="col col-50" style="padding-left:20px;">{{translate("results.nickname");}}</div>
-            <div class="col">{{translate("results.total");}}</div>
-            <div class="col">{{translate("results.last");}}</div>
+            <div class="col">{{ 'results.total' | translate }}</div>
+            <div class="col">{{ 'results.last' | translate }}</div>
         </div>
         <ion-list>
             <ion-item ng-repeat="team in teamsScore" type="item-text-wrap" >
@@ -20,14 +20,14 @@
         
         <div style="text-align: center; padding-top: 15px" ng-show="isEnd">
             <img src="../img/winner.png" /> 
-            <div>{{translate("results.winner");}}: {{currentTeam.nick}}</div>
+            <div>{{ 'results.winner' | translate }}: {{currentTeam.nick}}</div>
         </div>
 
         <div style="text-align: center; padding-top: 15px">
-            <button class="button button_green icon-right ion-chevron-right" style="width: 50%"  ng-click="continue()" ng-hide="isEnd" > {{translate("results.continue");}} </button>
+            <button class="button button_green icon-right ion-chevron-right" style="width: 50%"  ng-click="continue()" ng-hide="isEnd" > {{ 'results.continue' | translate }} </button>
         </div>
         <div style="text-align: center; padding-top: 15px">
-            <button class="button button_green icon-right ion-chevron-right" style="width: 50%"  ng-click="start()" ng-show="isEnd" > {{translate("results.new");}} </button>
+            <button class="button button_green icon-right ion-chevron-right" style="width: 50%"  ng-click="start()" ng-show="isEnd" > {{ 'results.new' | translate }} </button>
         </div>
 
         
