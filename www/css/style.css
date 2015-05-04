@@ -199,3 +199,12 @@ border:1px solid #52b913; -webkit-border-radius: 3px; -moz-border-radius: 3px;bo
     float: right;
     margin-right: 15px;
 }
+
+/*drawing*/
+#simple-board {
+    border: 1px solid black;
+}
+.drawing-board-canvas {
+    display: block;
+    height: 100% !important;
+}

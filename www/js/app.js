@@ -49,6 +49,11 @@ var app = angular.module('starter', ['ngCordova','ionic', 'starter.controllers',
       url: "/options",
       templateUrl:"templates/options.html",
       controller:"OptionController",
+    })
+    .state('draw', {
+        url: "/draw",
+        templateUrl: "templates/draw.html",
+        controller: "DrawController",
     });
 
     $urlRouterProvider.otherwise("/home");
