@@ -19,7 +19,8 @@
     //identify if timer is on
     $scope.playing = false;
 
-    $scope.icon = GameService.GetType();
+    $scope.type = GameService.GetType();
+    $scope.icon = GameService.GetTypeIcon();
     $scope.wordType = GameService.GetTypeWord();
 
     //stopwatch - start timer function
@@ -119,7 +120,12 @@
         $scope.wordsHidden = false;
     }
 
-
+    $scope.isDrawing = function () {
+        if ($scope.buttonsDisabled == false && $scope.type == 'D') {
+            return true;
+        } else
+            return false;
+    }
 
     $ionicModal.fromTemplateUrl('templates/draw.html', {
         scope: $scope,

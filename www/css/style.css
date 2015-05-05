@@ -117,6 +117,14 @@ progress::-moz-progress-bar {
     float: left;
     padding-left: 20px;
 }
+.header-text-draw {
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 20px;
+    display: block;
+    width: 100%;
+    text-align: center;
+}
 .result-points
 {
     text-align: right;
@@ -128,6 +136,7 @@ progress::-moz-progress-bar {
     padding-left: 5px;
     display: block;
     float: left;
+    max-width: 80px;
 }
 
 /*Buttons*/
@@ -203,8 +212,14 @@ border:1px solid #52b913; -webkit-border-radius: 3px; -moz-border-radius: 3px;bo
 /*drawing*/
 #simple-board {
     border: 1px solid black;
+    margin-left: 2px;
 }
 .drawing-board-canvas {
     display: block;
     height: 100% !important;
+}
+.drawing-board-control-navigation-reset {
+    width: 100px;
+    height: 40px !important;
+    margin-top: 3px !important;
 }

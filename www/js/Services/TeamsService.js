@@ -32,9 +32,9 @@
     }
 
     function isNickValid(nick) {
-        //Max length of team nick is 20 characters
+        //Max length of team nick is 10 characters
         //Min length of team nick is 1 character
-        if (nick != null && nick.length < 20 && nick.length > 0) {
+        if (nick != null && nick.length <= 10 && nick.length > 0) {
             return true;
         } else {
             addErrorMessage("Nick is not valid");

@@ -1,9 +1,9 @@
 ﻿<ion-modal-view>
     <ion-content>
-        <h1 style="width: 100%;" >Click to draw</h1>
+        <span class="header-text-draw">{{ 'game.drawTouch' | translate }}</span>
         <div id="simple-board" style="width: {{width-5}}px; height:{{height-150}}px;" ng-click="init()"></div>
-        <a class="button icon-right button_gray ion-gear-b full-width" ng-click="closeModal()">
-                test
+        <a class="button icon-right button_gray ion-edit full-width" ng-click="closeModal()" style="margin-top: 5px;">
+            {{ 'game.drawClose' | translate }}
         </a>
     </ion-content>
 </ion-modal-view>

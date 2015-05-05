@@ -38,7 +38,11 @@
                 </div>
             </div>
         </div>
-        
+        <div class="card" ng-show="isDrawing()">
+            <a class="button icon-right button_gray ion-edit full-width" ng-click="openModal()">
+                {{ 'game.draw' | translate }}
+            </a>
+        </div>
         <div style="text-align:center;" > {{rangeValue}} {{ 'game.sec' | translate }} <i class="icon ion-ios7-stopwatch-outline"></i> </div>
 
         <div class="range">
@@ -66,8 +70,6 @@
                 {{ 'game.wrong' | translate }}
             </button>
         </div>
-        <a class="button icon-right button_gray ion-gear-b full-width" ng-click="openModal()">
-                test
-            </a>
+        
     </ion-content>
 </ion-view>

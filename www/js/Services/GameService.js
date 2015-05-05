@@ -238,8 +238,11 @@
         EndGame: function() {
             console.log('end of a game');
         },
+        GetType: function () {
+            return WordsService.GetTypeByPoints(currentTeam.points);
+        },
 
-        GetType: function() {
+        GetTypeIcon: function() {
             var type = WordsService.GetTypeByPoints(currentTeam.points);
             return getIconByType(type);
         },
