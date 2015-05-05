@@ -1,6 +1,6 @@
 ﻿angular.module('starter.services')
 
-.factory('Teams','$translate', function (GameService, $translate) {
+.factory('Teams', function (GameService, $translate) {
     //testing data
     var teams = [];
 
