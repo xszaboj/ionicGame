@@ -26,6 +26,12 @@
         "team.add": "Add team",
         "team.continue": "Continue",
         "team.teams": "Teams",
+        "team.nickNotValid": "Nickname is not valid",
+        "team.maxTeam": "There must be min 2 and max 6 teams",
+        "team.names": "Names of teams must be unique",
+        "team.orders": "Orders of teams must be unique",
+        "team.points": "Points must be null",
+        "team.haveTeams": "You must have some teams"
     });
     $translateProvider.translations('cz', {
         "home.start": "Nová hra",
@@ -54,6 +60,12 @@
         "team.add": "Přidat tým",
         "team.continue": "Pokračovat",
         "team.teams": "Týmy",
+        "team.nickNotValid": "Přezdívka není správně",
+        "team.maxTeam": "Musí být min 2 a max 6 týmů",
+        "team.names": "Přezdívky musí být unikátní",
+        "team.orders": "Pořadí musí být unikátní",
+        "team.points": "Body musí být nula",
+        "team.haveTeams": "Musíte mít nějaké týmy"
     });
     $translateProvider.preferredLanguage('cz');
 });
