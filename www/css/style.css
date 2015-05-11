@@ -138,6 +138,10 @@ progress::-moz-progress-bar {
     float: left;
     max-width: 80px;
 }
+.button:hover
+{
+    color:white;
+}
 
 /*Buttons*/
 .button_green{
