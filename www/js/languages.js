@@ -31,7 +31,8 @@
         "team.names": "Names of teams must be unique",
         "team.orders": "Orders of teams must be unique",
         "team.points": "Points must be null",
-        "team.haveTeams": "You must have some teams"
+        "team.haveTeams": "You must have some teams",
+        "options.change" : "Change language"
     });
     $translateProvider.translations('cz', {
         "home.start": "Nová hra",
@@ -65,7 +66,8 @@
         "team.names": "Přezdívky musí být unikátní",
         "team.orders": "Pořadí musí být unikátní",
         "team.points": "Body musí být nula",
-        "team.haveTeams": "Musíte mít nějaké týmy"
+        "team.haveTeams": "Musíte mít nějaké týmy",
+        "options.change": "Zmen jazyk"
     });
-    $translateProvider.preferredLanguage('cz');
+    $translateProvider.preferredLanguage('en');
 });

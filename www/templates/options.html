@@ -1,8 +1,20 @@
-<ion-view title="Teams">
+<ion-view title="{{ 'home.options' | translate }}">
     <ion-content>
-    	<div>
-    		here will be some options
-    		{{optionOne}}
-    	</div>
+    <form name="optionForm" novalidate="novalidate">
+	    <ion-list>
+	    	<ion-item ng-repeat="lang in languages" type="item-text-wrap">
+				<div class="list">
+		    		<label class="item item-radio">
+		    			<input type="radio" name="group" ng-model="language.lang" value="{{lang}}">
+		    			<div class="item-content">{{lang}}</div>
+		    			<i class="radio-icon ion-checkmark"></i>
+		    		</label>
+	    		</div>
+	    	</ion-item>
+	    </ion-list>
+    </form>
+	<button class="button button_green_light ion-checkmark icon-right" style="width:100%;" ng-click="changeLang()" >
+        {{ 'options.change' | translate }}
+    </button>
     </ion-content>
 </ion-view>
