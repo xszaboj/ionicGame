@@ -1,18 +1,17 @@
 angular.module('starter.controllers')
-.controller('OptionController', ['$scope', '$translate', function ($scope, $translate) {
+.controller('OptionController', ['$scope', '$translate','OptionService', function ($scope, $translate, OptionService) {
 
 	$scope.languages = ['en', 'cz'];
 	$scope.language = {
-		//get from localStorage
-		lang :'en',
+		lang : OptionService.GetLanguage(),
 	};
 
 
 	$scope.changeLang = function()
 	{
-		//save to localStorage
-
-		$translate.use($scope.language.lang);
+		var lang = $scope.language.lang;
+		OptionService.SaveLanguageState(lang);
+		$translate.use(lang);
 	}
 
 }])

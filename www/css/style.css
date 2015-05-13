@@ -63,12 +63,14 @@ input.ng-invalid.ng-dirty {
 }
 .main-logo
 {
+    text-align: center;
     display: block;
-    background-image: url("../img/pantomime.png");
+    background-image: url("../img/logo-width.png");
     background-repeat: no-repeat;
     background-size: contain;
     min-width: 100%;
     min-height: 200px;
+    background-position: center;
 }
 
 progress {
@@ -141,6 +143,11 @@ progress::-moz-progress-bar {
 .button:hover
 {
     color:white;
+}
+.change-lang-btn
+{
+    width:95%; 
+    margin-left: 2.5%;
 }
 
 /*Buttons*/
