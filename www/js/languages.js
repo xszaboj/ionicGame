@@ -67,7 +67,11 @@
         "team.orders": "Pořadí musí být unikátní",
         "team.points": "Body musí být nula",
         "team.haveTeams": "Musíte mít nějaké týmy",
-        "options.change": "Zmen jazyk"
+        "options.change": "Změn jazyk"
     });
-    $translateProvider.preferredLanguage('en');
+    var language = localStorage.getItem("lang");
+    if(language != null){
+        $translateProvider.preferredLanguage('en');
+    }
+    $translateProvider.preferredLanguage(language);
 });
