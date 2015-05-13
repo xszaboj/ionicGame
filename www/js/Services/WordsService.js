@@ -67,13 +67,13 @@
 
         function getTypeByPoints(points) {
             if (points != null) {
-                if ((points >= 0 && points < 10) || (points >= 30 && points < 40)) {
+                if ((points >= 0 && points <= 7) || (points >= 19 && points <= 25)|| (points >= 41 && points <= 45)) {
                     return drawindType;
                 }
-                else if ((points >= 10 && points < 20) || (points >= 40 && points < 50)) {
+                else if ((points >= 8 && points <= 12) || (points >= 26 && points <= 32)|| (points >= 46 && points <= 52)) {
                     return speakingType;
                 }
-                else if ((points >= 20 && points < 30) || (points >= 50 && points < 60)) {
+                else if ((points >= 13 && points <= 18) || (points >= 33 && points < 40)|| (points >= 53 && points <= 60)) {
                     return pantomimaType;
                 } else {
                     return null;
