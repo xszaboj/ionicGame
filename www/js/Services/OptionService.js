@@ -1,5 +1,5 @@
 angular.module('starter.services')
-.factory('OptionService', function () {
+.factory('OptionService', function (WordsService) {
 
 	var defaultLanguage = 'en';
 
@@ -15,6 +15,7 @@ angular.module('starter.services')
 		},
 		SaveLanguageState : function(lang){
 			localStorage.setItem('lang', lang);
+			WordsService.RefreshAllWords();
 		}
 	}
 })

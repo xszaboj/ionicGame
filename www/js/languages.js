@@ -13,7 +13,7 @@
         "game.wrong": "Wrong",
         "game.drawing": "Draw",
         "game.describe": "Describe",
-        "game.mime": "Pantomime",
+        "game.mime": "Act",
         "game.draw": "Draw board",
         "game.drawClose": "Close",
         "game.drawTouch": "Touch to draw",

@@ -1,0 +1,11 @@
+﻿{"words" : [
+	{"id": 0, "word":"květina", "type":"D", "points":3 },
+	{"id": 1, "word":"slunce", "type":"D", "points":3},
+	{"id": 2, "word":"revoluce", "type":"T", "points":3 },
+	{"id": 3, "word":"jablko", "type":"T", "points":3},
+	{"id": 4, "word":"kuře", "type":"P", "points":3 },
+	{"id": 5, "word":"černoch", "type":"P", "points":3},
+	{"id": 6, "word":"strom", "type":"D", "points":4 },
+	{"id": 7, "word":"basebalová pálka", "type":"D", "points":4},
+	{"id": 8, "word":"batman", "type":"D", "points":3}
+]}

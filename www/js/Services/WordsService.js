@@ -10,19 +10,24 @@
         var speakingType = "T";
         var pantomimaType = "P";
         var minWords = 2;
+        var defaultFileName = "en-words";
 
         function getWords() {
             var deffered = $q.defer();
-
-            
-                //load and put data to cache
-                $http.get('Data/words.json').success(function (data) {
-                    console.log("received over HTTP");
-                    //self.wordsCache.put(cacheKey, data);
-                    deffered.resolve(data);
-                }).error(function (response, status, headers, config) {
-                    deffered.reject(status);
-                });
+            var language = localStorage.getItem("lang");
+            var fileName = defaultFileName;
+            if(language != null)
+            {
+                fileName = language + "-words";
+            }
+            //load and put data to cache
+            $http.get('Data/' + fileName + '.json').success(function (data) {
+                console.log("received over HTTP");
+                //self.wordsCache.put(cacheKey, data); -- this is not working on phone, dont know why
+                deffered.resolve(data);
+            }).error(function (response, status, headers, config) {
+                deffered.reject(status);
+            });
             
             return deffered.promise;
         }
@@ -162,6 +167,7 @@
             LoadWords: getWordsByType,
             GetTypeByPoints: getTypeByPoints,
             InitializeWords: initializeWords,
+            RefreshAllWords: refreshAllWords,
         }
 
     });
