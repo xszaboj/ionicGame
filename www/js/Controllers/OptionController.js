@@ -1,5 +1,5 @@
 angular.module('starter.controllers')
-.controller('OptionController', ['$scope', '$translate','OptionService', function ($scope, $translate, OptionService) {
+.controller('OptionController', ['$scope', 'OptionService', function ($scope, OptionService) {
 
 	$scope.languages = ['en', 'cz'];
 	$scope.language = {
@@ -11,7 +11,6 @@ angular.module('starter.controllers')
 	{
 		var lang = $scope.language.lang;
 		OptionService.SaveLanguageState(lang);
-		$translate.use(lang);
 	}
 
 }])
