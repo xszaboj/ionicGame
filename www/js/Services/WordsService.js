@@ -22,7 +22,7 @@
             }
             //load and put data to cache
             $http.get('Data/' + fileName + '.json').success(function (data) {
-                console.log("received over HTTP");
+                console.log("received over HTTP, "+ fileName);
                 //self.wordsCache.put(cacheKey, data); -- this is not working on phone, dont know why
                 deffered.resolve(data);
             }).error(function (response, status, headers, config) {
@@ -48,12 +48,12 @@
             localStorage.setItem("unUsed", JSON.stringify(getUnusedWords()));
         }
 
-        function setUnusedWords() {
+        function setUnusedWords(refresh) {
             var allWords = [];
             getWords().then(function (data) {
                 allWords = data.words;
                 var savedUnusedWords = getSavedUnusedWords();
-                if (savedUnusedWords == null || savedUnusedWords.length === 0) {
+                if (refresh || (savedUnusedWords == null || savedUnusedWords.length === 0)) {
                     //jeste zadny unused slova nemam
                     localStorage.setItem("unUsed", JSON.stringify(allWords));
                     unUsedWords = getSavedUnusedWords();
@@ -159,7 +159,7 @@
 
         function initializeWords() {
             if (unUsedWords == null) {
-                setUnusedWords();
+                setUnusedWords(true);
             }
         }
 
