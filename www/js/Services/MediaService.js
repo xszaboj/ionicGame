@@ -28,11 +28,8 @@
 
     return {
         PlayMedia: function (src) {
-            //set source
             setSource(src);
-            //get source
             var srcToPlay = getSource();
-            //play media object
             if (ionic.Platform.isAndroid()) {
                 console.log('played from media');
                 var mediaRes = new Media(srcToPlay, success, error);

@@ -1,105 +1,48 @@
 ﻿angular.module('starter.controllers')
-.controller('GameController', ['$scope', '$interval', 'GameService', 'UtilService', 'MediaService', 'WordsService','$ionicModal', function ($scope, $interval, GameService, UtilService, MediaService, WordsService, $ionicModal) {
-    //start,correct,wrong buttons
-    $scope.buttonsDisabled = true;
+.controller('GameController', ['$scope', 'GameService', 'UtilService', 'WordsService', 'GameDrawingService', 'GameTimerService',
+    function ($scope, GameService, UtilService, WordsService, GameDrawingService, GameTimerService) {
+    $scope.wordIsNotSelected = true;
     $scope.wordsHidden = false;
-
-    //currently playing team
-    var currentTeam = GameService.GetCurrentTeam();
-    $scope.currentTeam = currentTeam;
-
-    //current round
+    $scope.currentTeam = GameService.GetCurrentTeam();
     $scope.currentRound = GameService.GetCurrentRound();
-
-    $scope.words = WordsService.LoadWords(currentTeam.points);
-
-    //value of timer
+    $scope.words = WordsService.LoadWords($scope.currentTeam.points);
     $scope.rangeValue = 0;
-
-    //identify if timer is on
-    $scope.playing = false;
-
     $scope.type = GameService.GetType();
     $scope.icon = GameService.GetTypeIcon();
     $scope.wordType = GameService.GetTypeWord();
 
-    //stopwatch - start timer function
-    $scope.startTimer = function () {
-        $scope.playing = true;
-        //What is going to happen every cycle in the timer
-        var delegate = function () {
-            if ($scope.rangeValue == 60 || $scope.rangeValue > 60) {
-                try {
-                    MediaService.PlayMedia("sound.mp3");
-                }
-                catch (e) {
-                    console.log(e);
-                }
-                finally {
-                    $scope.stop();
-                }
-            } else {
-                $scope.rangeValue++;
-            }
-        };
-        //Interval of one cycle
-        var interval = 1000;
-        //Start timer
-        UtilService.StartTimer(delegate, interval);
-    }
-
-    //stopwatch - stop timer function
-    $scope.stop = function () {
-        $scope.playing = false;
-        UtilService.StopTimer();
-    }
-
-
     var chooseWord = function chooseWord(index)
     {
-        if (index === 0) {
-            $scope.words[0].selected = true;
-            $scope.words[1].selected = false;
-        }
-        else if (index === 1) {
-            $scope.words[0].selected = false;
-            $scope.words[1].selected = true;
-        }
-        else
-        {
-            throw new Exception("there is somethng very wrong");
-        }
+        $scope.words[0].selected = false;
+        $scope.words[1].selected = false;
+        $scope.words[index].selected = true;
     }
 
     //You can select only one word
     $scope.selectWord = function (index) {
-        if($scope.buttonsDisabled){
-            //enable stopwatch, correct and wrong button
-            $scope.buttonsDisabled = false;
+        if($scope.wordIsNotSelected){
+            $scope.wordIsNotSelected = false;
             chooseWord(index);     
-            $scope.startTimer();
+            GameTimerService.StartTimer($scope);
         }
     }
 
     $scope.correct = function () {
-        //Stop timer, save state, redirect
-
-        console.log("correct");
         var selected = $scope.words[0].selected ? $scope.words[0] : $scope.words[1];
         GameService.Correct(selected);
-        defaultState();
+        redirectToResults("correct");
+    }
+    $scope.wrong = function () {
+        GameService.Wrong();
+        redirectToResults("wrong");
+    }
+    function redirectToResults(state){
+        console.log(state);
+        setGameDefaultState();
         $scope.simpleboard = null;
         UtilService.RedirectWithoutHistory("results");
     }
 
-    $scope.wrong = function () {
-        //Stop timer, call correct, redirect
-        console.log("wrong");
-        GameService.Wrong();
-        defaultState();
-        $scope.simpleboard = null;
-        UtilService.RedirectWithoutHistory("results");
-    }
     $scope.hideWords = function() {
         $scope.wordsHidden = true;
     }
@@ -107,59 +50,35 @@
         $scope.wordsHidden = false;
     }
     $scope.showHideWordsButton = function() {
-        return (($scope.buttonsDisabled == false) && ($scope.wordsHidden == false));
+        return (($scope.wordIsNotSelected == false) && ($scope.wordsHidden == false));
     }
     $scope.showShowWordsButton = function () {
-        return (($scope.buttonsDisabled == false) && ($scope.wordsHidden == true));
+        return (($scope.wordIsNotSelected == false) && ($scope.wordsHidden == true));
     }
 
-    function defaultState() {
-        $scope.stop();
+    function setGameDefaultState() {
+        GameTimerService.StopTimer();
         $scope.rangeValue = 0;
-        $scope.buttonsDisabled = true;
+        $scope.wordIsNotSelected = true;
         $scope.wordsHidden = false;
     }
 
+    /*Drawing window*/
     $scope.isDrawing = function () {
-        if ($scope.buttonsDisabled == false && $scope.type == 'D') {
-            return true;
-        } else
-            return false;
+        return GameDrawingService.IsGameTypeDrawing($scope);
     }
-
-    $ionicModal.fromTemplateUrl('templates/draw.html', {
-        scope: $scope,
-        animation: 'slide-in-up'
-    }).then(function (modal) {
-        $scope.modal = modal;
-    });
+    GameDrawingService.InitializeModalWindow($scope);
     $scope.openModal = function () {
-        $scope.modal.show();
-
+        GameDrawingService.OpenWindow($scope.modal);
     };
     $scope.closeModal = function () {
-        $scope.modal.hide();
+        GameDrawingService.CloseWindow($scope.modal);
     };
-
-    //Cleanup the modal when we're done with it!
-    $scope.$on('$destroy', function () {
-        $scope.modal.remove();
-    });
-
-    $scope.width = innerWidth;
-    $scope.height = innerHeight;
+    GameDrawingService.DestroyWindowEvent($scope);
+    $scope.width = GameDrawingService.GetWidth();
+    $scope.height = GameDrawingService.GetHeight();
     $scope.exist = false;
-    $scope.init = function () {
-        if (!$scope.exist) {
-            $scope.exist = true;
-            $scope.simpleboard = new DrawingBoard.Board('simple-board', {
-                controls: [{ Navigation: { back: false, forward: false } }],
-                controlsPosition: "top",
-                webStorage: false
-
-            });
-        }
-    }
+    $scope.init = function (){ GameDrawingService.Init($scope); }
 
 }])
 
