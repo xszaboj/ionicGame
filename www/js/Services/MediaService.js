@@ -1,11 +1,10 @@
 ﻿angular.module('starter.services')
-.factory('MediaService', function () {
+.factory('MediaService', function ($cordovaMedia) {
 
     var source = null;
-    var device = ionic.Platform.device();
 
     function getSource() {
-        if (typeof device != undefined && device.platform != undefined && device.platform == 'Android') {
+        if (ionic.Platform.isAndroid()) {
             source = '/android_asset/www/' + source;
             return source;
         }
@@ -19,8 +18,8 @@
     }
 
     function success() {
-        // release the media resource once finished playing
-        mediaRes.release();
+        console.log("success");
+        this.release();
     }
 
     function error(e) {
@@ -33,11 +32,11 @@
             setSource(src);
             //get source
             var srcToPlay = getSource();
-
             //play media object
-            if (typeof device != undefined && device.platform != undefined) {
+            if (ionic.Platform.isAndroid()) {
+                console.log('played from media');
                 var mediaRes = new Media(srcToPlay, success, error);
-                mediaRes.play();
+                $cordovaMedia.play(mediaRes);
             }
             else if (typeof Audio != "undefined") {
                 console.log("played from audio")

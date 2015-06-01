@@ -9,10 +9,6 @@
             });
             $location.path(url);
         },
-        
-        PlaySound: function (audioElement) {
-            
-        },
 
         StartTimer: function (delegate, int)
         {
